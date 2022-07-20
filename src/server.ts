@@ -15,7 +15,9 @@ app.use('/usuario', userRouter)
 // eslint-disable-next-line no-unused-vars
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   if (err.sql) {
-    res.status(500).json({ error: 'Algo deu errado.' })
+    res.status(500).json({ mensagem: 'Algo deu errado.' })
+  } else if (err.name === 'JsonWebTokenError') {
+    res.status(401).json({ mensagem: 'Token inválido ou expirado' })
   } else {
     res.status(err.code).json({ message: err.message })
   }

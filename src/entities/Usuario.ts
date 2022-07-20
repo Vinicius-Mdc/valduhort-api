@@ -15,7 +15,19 @@ export class Usuario {
   @Column()
   senha: string
 
-  constructor(nome: string, email: string, senha: string, id?: string) {
+  @Column({
+    type: 'text',
+    nullable: true,
+  })
+  tokenRedefinirSenha?: string | null
+
+  constructor(
+    nome: string,
+    email: string,
+    senha: string,
+    id?: string,
+    tokenRedefinirSenha?: string
+  ) {
     this.nome = nome
     this.email = email
     this.senha = senha
@@ -24,5 +36,6 @@ export class Usuario {
     } else {
       this.id = id
     }
+    this.tokenRedefinirSenha = tokenRedefinirSenha
   }
 }
