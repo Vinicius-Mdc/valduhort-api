@@ -30,6 +30,12 @@ export class CriarUsuario1656263341744 implements MigrationInterface {
             length: '60',
             isNullable: false,
           },
+          {
+            name: 'tokenRedefinirSenha',
+            type: 'varchar',
+            length: '200',
+            isNullable: true,
+          },
         ],
       })
     )

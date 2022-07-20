@@ -1,10 +1,10 @@
 export class ApiError extends Error {
-  code: number
-  message: string
-  constructor(code: number, message: string) {
+  codigo: number
+  mensagem: string
+  constructor(code: number, mensagem: string) {
     super()
-    this.code = code
-    this.message = message
+    this.codigo = code
+    this.mensagem = mensagem
   }
 
   static badRequest(msg: string) {
