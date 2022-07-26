@@ -4,6 +4,7 @@ import 'dotenv/config'
 import express, { NextFunction, Request, Response } from 'express'
 import userRouter from './routes/usuario'
 import bannerRouter from './routes/banner'
+import produtosRouter from './routes/produto'
 
 const app = express()
 
@@ -13,6 +14,7 @@ app.use(express.json())
 
 app.use('/usuario', userRouter)
 app.use('/banners', bannerRouter)
+app.use('/produtos', produtosRouter)
 
 // eslint-disable-next-line no-unused-vars
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
