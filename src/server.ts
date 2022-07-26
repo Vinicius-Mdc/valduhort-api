@@ -3,6 +3,7 @@ import './database/dataSource'
 import 'dotenv/config'
 import express, { NextFunction, Request, Response } from 'express'
 import userRouter from './routes/usuario'
+import bannerRouter from './routes/banner'
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.disable('x-powered-by')
 app.use(express.json())
 
 app.use('/usuario', userRouter)
+app.use('/banners', bannerRouter)
 
 // eslint-disable-next-line no-unused-vars
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
